@@ -14,20 +14,20 @@ public class SocketListener
     public static void StartServer()
     {
         
-        //ip adres berlirle
+        //ip adres
         IPAddress ipAddress = IPAddress.Parse("192.168.0.10");
-        //endpoint belrile
+        //endpoint
         IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
         try
         {
 
-            //soket okuştur
+            //soket oluşştur
             Socket listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             
             listener.Bind(localEndPoint);
             
-            // kaç req
+            // kaç request handle edilecek
             listener.Listen(10);
 
             Console.WriteLine("Waiting for a connection...");
